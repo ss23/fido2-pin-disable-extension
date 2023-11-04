@@ -1,0 +1,24 @@
+{
+  "name": "FIDO2 Pin Disabler",
+  "description": "Transparently disable any PIN requirements for Passkeys or FIDO2",
+  "author": "Stephen Shkardoon",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content_script.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["inject.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "host_permissions": ["<all_urls>"],
+  "icons": {
+    "128": "icon128.png"
+  }
+}
